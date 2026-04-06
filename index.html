@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gyovanna Red Party</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+background:linear-gradient(180deg,#ffffff,#ca3636,#65000b);
+color:#65000b;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* convite */
+#invite{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(180deg,#9e0101,#dad0d0);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999;
+color:rgb(112, 0, 13);
+}
+
+#invite h1{
+font-family:'Great Vibes', cursive;
+font-size:60px;
+}
+
+.enter-btn{
+background:rgb(101, 0, 11);
+color:#f5f5f5;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+}
+
+/* capa */
+header h1{
+font-family:'Great Vibes', cursive;
+font-size:60px;
+}
+
+.cover img{
+width:260px;
+height:260px;
+object-fit:cover;
+border-radius:50%;
+box-shadow:0 0 25px rgba(255,0,80,0.5);
+margin-top:20px;
+}
+
+/* slide */
+.slideshow{
+margin-top:20px;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+gap:10px;
+animation:slide 40s linear infinite;
+}
+
+.slides img{
+width: calc(100% / 6);
+height:200px;
+object-fit:cover;
+border-radius:15px;
+flex-shrink:0;
+}
+
+@keyframes slide{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
+
+/* cards */
+.card{
+background:rgb(247, 247, 247);
+border-radius:25px;
+padding:30px;
+margin:20px auto;
+max-width:500px;
+width:90%;
+box-shadow:0 0 15px rgba(255,0,80,0.15);
+}
+
+h2{
+font-family:'Playfair Display', serif;
+}
+
+/* CONTADOR BONITO */
+#countdown{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
+.time-box{
+background:#65000c00;
+border:2px solid #65000b;
+color:#65000b;
+padding:15px;
+border-radius:15px;
+min-width:70px;
+}
+
+.time-box span{
+display:block;
+font-size:22px;
+font-weight:bold;
+}
+
+.time-box small{
+font-size:12px;
+}
+
+/* formulário */
+.form-box{
+background:#ffffff;
+border-radius:15px;
+padding:15px;
+margin:10px 0;
+text-align:left;
+}
+
+.form-box input{
+background:#ffffff00;
+border:2px solid #c9c9c9de;
+width:95%;
+padding:10px;
+border-radius:10px;
+}
+
+.radio-group{
+display:flex;
+gap:10px;
+}
+
+.radio-box{
+flex:1;
+background:#fcfcfc;
+border:2px solid #c9c9c9de;
+padding:10px;
+border-radius:10px;
+text-align:center;
+cursor:pointer;
+}
+
+.radio-box.active{
+border:2px solid #ff002fde;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#65000b;
+color:white;
+cursor:pointer;
+}
+
+/* mensagens */
+#mensagem, #mensagemNao{
+display:none;
+margin-top:20px;
+padding:20px;
+background:white;
+border-radius:20px;
+animation:aparecer 0.5s ease;
+}
+
+@keyframes aparecer{
+from{opacity:0; transform:scale(0.9);}
+to{opacity:1; transform:scale(1);}
+}
+
+/* confete */
+.confetti{
+position:fixed;
+width:8px;
+height:8px;
+top:-10px;
+z-index:1000;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px);}
+100%{transform:translateY(110vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="invite">
+<h1>Gyovanna    faz    14</h1>
+    
+<p>Você está convidado para melhor festa do ano ❤️</p>
+<button class="enter-btn" onclick="enterSite()">Abra seu convite</button>
+</div>
+
+<header class="cover">
+<h1>Gyovanna Red     Party ❤️</h1>
+<p>Prepare seu melhor look vermelho e venha comemorar comigo ❤️</p>
+<img src="foto1.jpg">
+</header>
+
+<div class="slideshow">
+<div class="slides">
+
+<img src="foto13.jpg">
+<img src="foto12.jpg">
+<img src="foto14.jpg">
+<img src="foto6.jpg">
+<img src="foto5.jpg">
+<img src="foto4.jpg">
+<img src="foto11.jpg">
+<img src="foto10.jpg">
+<img src="foto9.jpg">
+<img src="foto8.jpg">
+<img src="foto7.jpg">
+<img src="foto3.jpg">
+
+</div>
+</div>
+
+<div class="card">
+<h2>📅 Informações da festa</h2>
+
+<p><b>Data:</b> 01/05/2026</p>
+<p><b>Horário:</b> 16:00</p>
+<p><b>Local:</b> Baltazar Antonio Saraiva - 657</p>
+
+<div id="countdown"></div>
+</div>
+
+<div class="card">
+<h2>📍 Local da festa</h2>
+
+<iframe 
+src="https://maps.google.com/maps?q=Baltazar%20Antonio%20Saraiva%20657&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%" 
+height="300" 
+style="border:0; border-radius:15px;">
+</iframe>
+</div>
+
+<div style="color: #65000b;" class="card">
+<h2> Confirme sua presença</h2>
+
+<form id="meuForm" action="https://formspree.io/f/xjgpproa" method="POST">
+
+<div class="form-box">
+<label>Nome</label>
+<input type="text" name="nome" required>
+</div>
+
+<div class="form-box">
+<label>Vai à festa?</label>
+
+<div class="radio-group">
+<label class="radio-box">
+<input type="radio" name="presenca" value="Sim" required> Sim
+</label>
+
+<label class="radio-box">
+<input type="radio" name="presenca" value="Não"> Não
+</label>
+</div>
+
+</div>
+
+<div class="form-box">
+<label>Quantas pessoas?</label>
+<input type="number" name="pessoas">
+</div>
+
+<button type="submit">Confirmar</button>
+
+</form>
+
+<div id="mensagem">
+<h3>🎉 Presença confirmada!</h3>
+<p>Te espero na festa ❤️</p>
+</div>
+
+<div id="mensagemNao">
+<h3>💔 Que pena!</h3>
+<p>Você vai fazer falta 😢</p>
+</div>
+
+</div>
+
+<div style="padding:40px; font-size:18px; color: #f5f5f5;">
+❤️ Espero todos vocês para curtir esse momento especial comigo ❤️
+</div>
+
+<script>
+
+function enterSite(){
+document.getElementById("invite").style.display="none";
+confetti();
+}
+
+function confetti(){
+for(let i=0;i<150;i++){
+let c = document.createElement("div");
+c.className = "confetti";
+c.style.left = Math.random()*100 + "vw";
+c.style.background = ["#ff4d6d","#ff1f4b","#ff8fab","#ffffff"][Math.floor(Math.random()*4)];
+c.style.animationDuration = (Math.random()*3+2) + "s";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),5000);
+}
+}
+
+/* CONTADOR ANIMADO */
+const dataFesta = new Date("May 1, 2026 16:00:00").getTime();
+
+setInterval(()=>{
+let agora = new Date().getTime();
+let d = dataFesta - agora;
+
+let dias = Math.floor(d/(1000*60*60*24));
+let horas = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+let minutos = Math.floor((d%(1000*60*60))/(1000*60));
+let segundos = Math.floor((d%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML = `
+<div class="time-box"><span>${dias}</span><small>Dias</small></div>
+<div class="time-box"><span>${horas}</span><small>Horas</small></div>
+<div class="time-box"><span>${minutos}</span><small>Min</small></div>
+<div class="time-box"><span>${segundos}</span><small>Seg</small></div>
+`;
+
+},1000);
+
+/* resto igual */
+const radios = document.querySelectorAll('.radio-box');
+radios.forEach(box=>{
+box.onclick=()=>{
+radios.forEach(b=>b.classList.remove('active'));
+box.classList.add('active');
+box.querySelector('input').checked=true;
+}
+});
+
+const form = document.getElementById("meuForm");
+
+form.addEventListener("submit", function(e){
+e.preventDefault();
+
+const presenca = document.querySelector('input[name="presenca"]:checked');
+
+fetch(form.action, {
+method: "POST",
+body: new FormData(form),
+headers: { 'Accept': 'application/json' }
+}).then(()=>{
+form.style.display = "none";
+
+if(presenca.value === "Sim"){
+document.getElementById("mensagem").style.display = "block";
+}else{
+document.getElementById("mensagemNao").style.display = "block";
+}
+});
+});
+
+</script>
+
+</body>
+</html>
